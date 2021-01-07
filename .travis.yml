@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true dav/playground npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-playground"
+  env: "DockerPlayground-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-751855496248"
+  bucket_path: "docker-playground"
+  on:
+    branch: develop
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
