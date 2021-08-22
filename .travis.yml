@@ -12,10 +12,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
-  app: "docker-playground"
-  env: "DockerPlayground-env"
+  app: "dq-docker"
+  env: "Dqdocker-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-751855496248"
-  bucket_path: "docker-playground"
+  bucket_path: "dq-docker"
   on:
     branch: develop
   access_key_id: $AWS_ACCESS_KEY
